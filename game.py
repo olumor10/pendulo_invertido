@@ -112,12 +112,15 @@ class ControladorFuzzy:
     def __init__(self, conjuntos_saida=3):
         # Universo das variáveis
         self.angulo = ctrl.Antecedent(
+            # Em radianos
             np.arange(-ANGULO_MAXIMO, ANGULO_MAXIMO+0.01, 0.01), 'angulo')
 
         self.velocidade = ctrl.Antecedent(
+            # Em radianos por frame
             np.arange(-FATOR_G*math.sin(ANGULO_MAXIMO), FATOR_G*math.sin(ANGULO_MAXIMO)+0.0001, 0.0001), 'velocidade')
 
         self.saida = ctrl.Consequent(
+            # Em pixels por frame
             np.arange(-VEL_CARRINHO_MAX, VEL_CARRINHO_MAX+1, 1), 'saida')
 
         # Funções de pertinência para ângulo
@@ -269,16 +272,16 @@ class Jogo:
                          (ponta_x, ponta_y), 5)
 
         # Leituras em tempo real
+        FPS = 60  # Frames por segundo
         angulo_graus = math.degrees(self.angulo)
-        vel_angular_graus = math.degrees(self.velocidade_angular)
+        vel_angular_graus = math.degrees(self.velocidade_angular)*FPS
         desenhar_texto(f"Ângulo: {angulo_graus:.3f}°",
                        PRETO, 80, centralizado=False, x=20)
         desenhar_texto(
             f"Vel. angular: {vel_angular_graus:.3f} °/s", PRETO, 110, centralizado=False, x=20)
-        # desenhar_texto(
-        #     f"X do carrinho: {self.carrinho_x:.3f} px", PRETO, 140, centralizado=False, x=20)
+
         desenhar_texto(
-            f"Vel. carrinho: {self.vel_carrinho:.3f} px/frame", PRETO, 140, centralizado=False, x=20)
+            f"Vel. carrinho: {self.vel_carrinho*FPS:.3f} px/s", PRETO, 140, centralizado=False, x=20)
 
         # Mensagem
         if not self.game_over:
