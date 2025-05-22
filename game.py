@@ -196,6 +196,7 @@ class Jogo:
         self.fuzzy_ativo = fuzzy_ativo
         self.angulo = np.random.uniform(-math.radians(10), math.radians(10))
         self.velocidade_angular = 0
+        self.vel_carrinho = 0
         self.game_over = False
         self.conjuntos_saida = conjuntos_saida
         self.controlador_fuzzy = ControladorFuzzy(
@@ -214,11 +215,12 @@ class Jogo:
         if self.fuzzy_ativo and self.controlador_fuzzy and not self.game_over:
             saida_fuzzy = self.controlador_fuzzy.calcular_saida(
                 self.angulo, self.velocidade_angular)
-            # O fuzzy deve atuar como velocidade
-            velocidade_carrinho += saida_fuzzy
+            velocidade_carrinho += saida_fuzzy  # saída do controlador fuzzy
 
         # Atualiza posição do carrinho com a velocidade calculada
         self.carrinho_x += velocidade_carrinho
+
+        self.vel_carrinho = velocidade_carrinho
 
         # Limites de movimento do carrinho
         self.carrinho_x = max(40, min(LARGURA - 40, self.carrinho_x))
@@ -273,8 +275,10 @@ class Jogo:
                        PRETO, 80, centralizado=False, x=20)
         desenhar_texto(
             f"Vel. angular: {vel_angular_graus:.3f} °/s", PRETO, 110, centralizado=False, x=20)
+        # desenhar_texto(
+        #     f"X do carrinho: {self.carrinho_x:.3f} px", PRETO, 140, centralizado=False, x=20)
         desenhar_texto(
-            f"X do carrinho: {self.carrinho_x:.3f} px", PRETO, 140, centralizado=False, x=20)
+            f"Vel. carrinho: {self.vel_carrinho:.3f} px/frame", PRETO, 140, centralizado=False, x=20)
 
         # Mensagem
         if not self.game_over:
@@ -410,7 +414,9 @@ class GerenciadorJogo:
             desenhar_texto(
                 "sob orientação do Prof. Dr. Ginalber L. O. Serra.", PRETO, 320)
             desenhar_texto(
-                "Clique em qualquer tecla para voltar.", VERMELHO, 500)
+                "São Luís - MA, 2025.", PRETO, 380)
+            desenhar_texto(
+                "Clique em qualquer tecla para voltar.", VERMELHO, 510)
 
         elif self.estado == "ajuda":
             tela.fill(BRANCO)
