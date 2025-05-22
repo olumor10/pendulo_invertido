@@ -1,6 +1,6 @@
 # Simulador de Pêndulo Invertido com Controle Fuzzy
 
-<img src="img/gameplay.png" width="200"/>
+<img src="img/gameplay.png" width="300"/>
 
 ## Descrição
 
@@ -27,12 +27,12 @@ Este projeto é uma simulação interativa de um pêndulo invertido controlado p
 O controlador fuzzy recebe como entradas:
 - **Ângulo do pêndulo** (em graus), que é dividido em 3 conjuntos fuzzy: Negativo, Zero e Positivo.
 
-    <img src="img/angulo.png" width="200"/>
+    <img src="img/angulo.png" width="500"/>
 
 
 - **Velocidade angular do pêndulo** (em graus/segundo), que também é dividida em 3 conjuntos fuzzy: Negativo, Zero e Positivo. 
 
-    <img src="img/vel_angular.png" width="200"/>
+    <img src="img/vel_angular.png" width="500"/>
 
 ### Saída (Consequente)
 A saída do sistema fuzzy é a **velocidade sugerida para o carrinho**(em pixels/segundo), que é somada ao controle manual (se ativo).
@@ -40,11 +40,11 @@ A saída do sistema fuzzy é a **velocidade sugerida para o carrinho**(em pixels
 Você pode escolher entre dois modos para a saída fuzzy:
 - **3 conjuntos:** Esquerda, Zero, Direita.
     
-    <img src="img/saida_3sets.png" width="200"/>
+    <img src="img/saida_3sets.png" width="500"/>
 
 - **7 conjuntos:** Muito Esquerda, Esquerda, Pouco Esquerda, Zero, Pouco Direita, Direita, Muito Direita.
 
-     <img src="img/saida_7sets.png" width="200"/>
+     <img src="img/saida_7sets.png" width="500"/>
 
 
 ### Base de Regras Fuzzy
@@ -94,9 +94,9 @@ As funções de pertinência e as regras fuzzy são ajustadas conforme a seleç�
 
 ## Telas do jogo
 
-<img src="img/menu.png" width="200"/>
+<img src="img/menu.png" width="500"/>
 
-<img src="img/gameplay.png" width="200"/>
+<img src="img/gameplay.png" width="500"/>
 
 ---
 
