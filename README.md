@@ -125,3 +125,7 @@ Projeto desenvolvido por Rômulo Rodrigues, acadêmico em Engenharia Elétrica p
 - scikit-fuzzy
 
 ---
+
+## Arquivo Executável
+
+Baixe o simulador e divirta-se: [Release](https://github.com/olumor10/pendulo_invertido/releases/tag/v1.0.0)
