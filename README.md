@@ -1,5 +1,7 @@
 # Simulador de Pêndulo Invertido com Controle Fuzzy
 
+<img src="img/gameplay.png" width="200"/>
+
 ## Descrição
 
 Este projeto é uma simulação interativa de um pêndulo invertido controlado por um sistema fuzzy, desenvolvida em Python com a biblioteca Pygame. O objetivo é manter o pêndulo equilibrado sobre um carrinho, utilizando tanto o controle manual (setas do teclado) quanto o controle automático fuzzy.
@@ -24,20 +26,25 @@ Este projeto é uma simulação interativa de um pêndulo invertido controlado p
 ### Entradas (Antecedente)
 O controlador fuzzy recebe como entradas:
 - **Ângulo do pêndulo** (em graus), que é dividido em 3 conjuntos fuzzy: Negativo, Zero e Positivo.
-![Ângulo](img/image.png)
+
+    <img src="img/angulo.png" width="200"/>
+
 
 - **Velocidade angular do pêndulo** (em graus/segundo), que também é dividida em 3 conjuntos fuzzy: Negativo, Zero e Positivo. 
-![vel_agular](img/image-1.png)
+
+    <img src="img/vel_angular.png" width="200"/>
 
 ### Saída (Consequente)
 A saída do sistema fuzzy é a **velocidade sugerida para o carrinho**(em pixels/segundo), que é somada ao controle manual (se ativo).
 
 Você pode escolher entre dois modos para a saída fuzzy:
 - **3 conjuntos:** Esquerda, Zero, Direita.
-![3sets](img/image-2.png)
+    
+    <img src="img/saida_3sets.png" width="200"/>
 
 - **7 conjuntos:** Muito Esquerda, Esquerda, Pouco Esquerda, Zero, Pouco Direita, Direita, Muito Direita.
-![7Sets](img/image-3.png)
+
+     <img src="img/saida_7sets.png" width="200"/>
 
 
 ### Base de Regras Fuzzy
@@ -87,9 +94,9 @@ As funções de pertinência e as regras fuzzy são ajustadas conforme a seleç�
 
 ## Telas do jogo
 
-![Menu Principal](img/menu.png)
+<img src="img/menu.png" width="200"/>
 
-![Game play](img/gameplay.png)
+<img src="img/gameplay.png" width="200"/>
 
 ---
 
