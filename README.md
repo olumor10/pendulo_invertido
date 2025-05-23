@@ -4,7 +4,7 @@
 
 ## Descrição
 
-Este projeto é uma simulação interativa de um pêndulo invertido controlado por um sistema fuzzy, desenvolvida em Python com a biblioteca Pygame. O objetivo é manter o pêndulo equilibrado sobre um carrinho, utilizando tanto o controle manual (setas do teclado) quanto o controle automático fuzzy.
+Este projeto é uma simulação interativa de um pêndulo invertido controlado por um sistema fuzzy, desenvolvida em Python com a biblioteca Pygame. O objetivo é manter o pêndulo equilibrado sobre um carrinho, utilizando tanto o controle manual quanto o controle automático fuzzy.
 
 ---
 
@@ -126,6 +126,6 @@ Projeto desenvolvido por Rômulo Rodrigues, acadêmico em Engenharia Elétrica p
 
 ---
 
-## Arquivo Executável
+## Arquivo Executável (.exe)
 
 Baixe o simulador e divirta-se: [Release](https://github.com/olumor10/pendulo_invertido/releases/tag/v1.0.0)
